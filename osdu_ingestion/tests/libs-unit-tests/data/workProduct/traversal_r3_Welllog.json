@@ -1,0 +1,120 @@
+[
+    {
+        "entity": {
+            "kind": "osdu:wks:work-product--WorkProduct:1.0.0",
+            "acl": {
+                "owners": [],
+                "viewers": []
+            },
+            "legal": {
+                "legaltags": [],
+                "otherRelevantDataCountries": []
+            },
+            "data": {
+                "ResourceSecurityClassification": "osdu:reference-data--ResourceSecurityClassification:RESTRICTED:",
+                "Name": "AKM-11 LOG",
+                "Description": "Well Log",
+                "Components": [
+                    "surrogate-key:wpc-1"
+                ]
+            }
+        },
+        "schema": "",
+        "type": "wpc"
+    },
+    {
+        "entity": {
+            "id": "surrogate-key:wpc-1",
+            "kind": "osdu:wks:work-product-component--WellLog:1.0.0",
+            "acl": {
+                "owners": [],
+                "viewers": []
+            },
+            "legal": {
+                "legaltags": [],
+                "otherRelevantDataCountries": []
+            },
+            "data": {
+                "ResourceSecurityClassification": "osdu:reference-data--ResourceSecurityClassification:RESTRICTED:",
+                "Name": "AKM-11 LOG",
+                "Description": "Well Log",
+                "Datasets": [
+                    "surrogate-key:file-1"
+                ],
+                "WellboreID": "osdu:master-data--Wellbore:1013:",
+                "TopMeasuredDepth": 2182.0004,
+                "BottomMeasuredDepth": 2481.0,
+                "Curves": [
+                    {
+                        "Mnemonic": "DEPT",
+                        "TopDepth": 2182.0,
+                        "BaseDepth": 2481.0,
+                        "DepthUnit": "osdu:reference-data--UnitOfMeasure:M:",
+                        "CurveUnit": "osdu:reference-data--UnitOfMeasure:M:"
+                    },
+                    {
+                        "Mnemonic": "GR",
+                        "TopDepth": 2182.0,
+                        "BaseDepth": 2481.0,
+                        "DepthUnit": "osdu:reference-data--UnitOfMeasure:M:",
+                        "CurveUnit": "osdu:reference-data--UnitOfMeasure:GAPI:"
+                    },
+                    {
+                        "Mnemonic": "DT",
+                        "TopDepth": 2182.0,
+                        "BaseDepth": 2481.0,
+                        "DepthUnit": "osdu:reference-data--UnitOfMeasure:M:",
+                        "CurveUnit": "osdu:reference-data--UnitOfMeasure:US/F:"
+                    },
+                    {
+                        "Mnemonic": "RHOB",
+                        "TopDepth": 2182.0,
+                        "BaseDepth": 2481.0,
+                        "DepthUnit": "osdu:reference-data--UnitOfMeasure:M:",
+                        "CurveUnit": "osdu:reference-data--UnitOfMeasure:G/C3:"
+                    },
+                    {
+                        "Mnemonic": "DRHO",
+                        "TopDepth": 2182.0,
+                        "BaseDepth": 2481.0,
+                        "DepthUnit": "osdu:reference-data--UnitOfMeasure:M:",
+                        "CurveUnit": "osdu:reference-data--UnitOfMeasure:G/C3:"
+                    },
+                    {
+                        "Mnemonic": "NPHI",
+                        "TopDepth": 2182.0,
+                        "BaseDepth": 2481.0,
+                        "DepthUnit": "osdu:reference-data--UnitOfMeasure:M:",
+                        "CurveUnit": "osdu:reference-data--UnitOfMeasure:V/V:"
+                    }
+                ]
+            }
+        },
+        "schema": ""
+    },
+    {
+        "entity": {
+                "id": "surrogate-key:file-1",
+                "kind": "osdu:wks:dataset--File.Generic:1.0.0",
+                "acl": {
+                    "owners": [],
+                    "viewers": []
+                },
+                "legal": {
+                    "legaltags": [],
+                    "otherRelevantDataCountries": []
+                },
+                "data": {
+                    "ResourceSecurityClassification": "osdu:reference-data--ResourceSecurityClassification:RESTRICTED:",
+                    "SchemaFormatTypeID": "osdu:reference-data--SchemaFormatType:LAS 2:",
+                    "DatasetProperties": {
+                        "FileSourceInfo": {
+                            "FileSource": "",
+                            "PreloadFilePath": "s3://osdu-seismic-test-data/r1/data/provided/well-logs/1013_akm11_1978_comp.las"
+                        }
+                    }
+                }
+            },
+        "schema": ""
+    }
+]

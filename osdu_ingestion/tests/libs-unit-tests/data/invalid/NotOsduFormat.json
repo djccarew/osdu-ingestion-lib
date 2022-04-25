@@ -1,0 +1,17 @@
+{
+    "execution_context": {
+        "Payload": {
+            "authorization": "Bearer test",
+            "data-partition-id": "opendes",
+            "AppKey": "",
+            "kind_version": "3.0.0"
+        },
+        "$schema": "https://schema.osdu.opengroup.org/json/master-data/Wellbore.1.0.0.json",
+        "$filename": "load_Wellbore.1.0.0_350112350400.json",
+        "manifest": {
+            "test": "test"
+        }
+    },
+    "workflow_name": "osdu_ingest",
+    "run_id": "foo"
+}

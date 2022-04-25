@@ -1,0 +1,9 @@
+[
+    "osdu:reference-data--ResourceSecurityClassification:RESTRICTED",
+    "osdu:master-data--Wellbore:1013",
+    "osdu:reference-data--UnitOfMeasure:M",
+    "osdu:reference-data--UnitOfMeasure:GAPI",
+    "osdu:reference-data--UnitOfMeasure:US/F",
+    "osdu:reference-data--UnitOfMeasure:G/C3",
+    "osdu:reference-data--UnitOfMeasure:V/V"
+]

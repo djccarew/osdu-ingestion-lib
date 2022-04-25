@@ -1,0 +1,724 @@
+{
+    "x-osdu-inheriting-from-kind": [
+        {
+            "kind": "osdu:wks:AbstractDataset:1.0.0",
+            "name": "Dataset"
+        },
+        {
+            "kind": "osdu:wks:AbstractFile:1.0.0",
+            "name": "File"
+        }
+    ],
+    "x-osdu-license": "Copyright 2021, The Open Group \\nLicensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 . Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "x-osdu-schema-source": "osdu:wks:dataset--File.Generic:1.0.0",
+    "description": "The Generic File template.",
+    "title": "File.Generic",
+    "type": "object",
+    "x-osdu-review-status": "Accepted",
+    "required": [
+        "kind",
+        "acl",
+        "legal"
+    ],
+    "additionalProperties": false,
+    "definitions": {
+        "opendes:wks:AbstractCommonResources:1.0.0": {
+            "x-osdu-inheriting-from-kind": [],
+            "x-osdu-license": "Copyright 2021, The Open Group \\nLicensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 . Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.",
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "x-osdu-schema-source": "osdu:wks:AbstractCommonResources:1.0.0",
+            "description": "Common resources to be injected at root 'data' level for every entity, which is persistable in Storage. The insertion is performed by the OsduSchemaComposer script.",
+            "title": "OSDU Common Resources",
+            "type": "object",
+            "properties": {
+                "ResourceHomeRegionID": {
+                    "x-osdu-relationship": [
+                        {
+                            "EntityType": "OSDURegion",
+                            "GroupType": "reference-data"
+                        }
+                    ],
+                    "pattern": "^[\\w\\-\\.]+:reference-data\\-\\-OSDURegion:[\\w\\-\\.\\:\\%]+:[0-9]*$",
+                    "description": "The name of the home [cloud environment] region for this OSDU resource object.",
+                    "title": "Resource Home Region ID",
+                    "type": "string"
+                },
+                "ResourceHostRegionIDs": {
+                    "description": "The name of the host [cloud environment] region(s) for this OSDU resource object.",
+                    "title": "Resource Host Region ID",
+                    "type": "array",
+                    "items": {
+                        "x-osdu-relationship": [
+                            {
+                                "EntityType": "OSDURegion",
+                                "GroupType": "reference-data"
+                            }
+                        ],
+                        "pattern": "^[\\w\\-\\.]+:reference-data\\-\\-OSDURegion:[\\w\\-\\.\\:\\%]+:[0-9]*$",
+                        "type": "string"
+                    }
+                },
+                "ResourceLifecycleStatus": {
+                    "x-osdu-relationship": [
+                        {
+                            "EntityType": "ResourceLifecycleStatus",
+                            "GroupType": "reference-data"
+                        }
+                    ],
+                    "pattern": "^[\\w\\-\\.]+:reference-data\\-\\-ResourceLifecycleStatus:[\\w\\-\\.\\:\\%]+:[0-9]*$",
+                    "description": "Describes the current Resource Lifecycle status.",
+                    "title": "Resource Lifecycle Status",
+                    "type": "string"
+                },
+                "ResourceSecurityClassification": {
+                    "x-osdu-relationship": [
+                        {
+                            "EntityType": "ResourceSecurityClassification",
+                            "GroupType": "reference-data"
+                        }
+                    ],
+                    "pattern": "^[\\w\\-\\.]+:reference-data\\-\\-ResourceSecurityClassification:[\\w\\-\\.\\:\\%]+:[0-9]*$",
+                    "description": "Classifies the security level of the resource.",
+                    "title": "Resource Security Classification",
+                    "type": "string"
+                },
+                "ResourceCurationStatus": {
+                    "x-osdu-relationship": [
+                        {
+                            "EntityType": "ResourceCurationStatus",
+                            "GroupType": "reference-data"
+                        }
+                    ],
+                    "pattern": "^[\\w\\-\\.]+:reference-data\\-\\-ResourceCurationStatus:[\\w\\-\\.\\:\\%]+:[0-9]*$",
+                    "description": "Describes the current Curation status.",
+                    "title": "Resource Curation Status",
+                    "type": "string"
+                },
+                "ExistenceKind": {
+                    "x-osdu-relationship": [
+                        {
+                            "EntityType": "ExistenceKind",
+                            "GroupType": "reference-data"
+                        }
+                    ],
+                    "pattern": "^[\\w\\-\\.]+:reference-data\\-\\-ExistenceKind:[\\w\\-\\.\\:\\%]+:[0-9]*$",
+                    "description": "Where does this data resource sit in the cradle-to-grave span of its existence?",
+                    "title": "Existence Kind",
+                    "type": "string"
+                },
+                "Source": {
+                    "description": "The entity that produced the record, or from which it is received; could be an organization, agency, system, internal team, or individual. For informational purposes only, the list of sources is not governed.",
+                    "title": "Data Source",
+                    "type": "string"
+                }
+            },
+            "$id": "https://schema.osdu.opengroup.org/json/abstract/AbstractCommonResources.1.0.0.json"
+        },
+        "opendes:wks:AbstractFile:1.0.0": {
+            "x-osdu-inheriting-from-kind": [],
+            "x-osdu-license": "Copyright 2021, The Open Group \\nLicensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 . Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.",
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "x-osdu-schema-source": "osdu:wks:AbstractFile:1.0.0",
+            "description": "The schema fragment representing single files",
+            "x-osdu-review-status": "Accepted",
+            "title": "AbstractFile",
+            "type": "object",
+            "properties": {
+                "Checksum": {
+                    "pattern": "^[0-9a-fA-F]{32}",
+                    "description": "MD5 checksum of file bytes - a 32 byte hexadecimal number.",
+                    "type": "string",
+                    "title": "MD5 Checksum",
+                    "example": "d41d8cd98f00b204e9800998ecf8427e"
+                },
+                "DatasetProperties": {
+                    "description": "The dataset properties for a single file.",
+                    "type": "object",
+                    "title": "Dataset Properties",
+                    "properties": {
+                        "FileSourceInfo": {
+                            "description": "Information about the single file.",
+                            "title": "File Source Info",
+                            "$ref": "#/definitions/opendes:wks:AbstractFileSourceInfo:1.0.0"
+                        }
+                    }
+                }
+            },
+            "required": [
+                "DatasetProperties"
+            ],
+            "$id": "https://schema.osdu.opengroup.org/json/abstract/AbstractFile.1.0.0.json"
+        },
+        "opendes:wks:AbstractFileSourceInfo:1.0.0": {
+            "x-osdu-inheriting-from-kind": [],
+            "x-osdu-license": "Copyright 2021, The Open Group \\nLicensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 . Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.",
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "x-osdu-schema-source": "osdu:wks:AbstractFileSourceInfo:1.0.0",
+            "description": "A schema fragment to describe file source information.",
+            "x-osdu-review-status": "Accepted",
+            "title": "AbstractFileSourceInfo",
+            "type": "object",
+            "properties": {
+                "PreloadFileModifyUser": {
+                    "description": "Optional user name or reference, who last modified the file prior to up-loading to the platform.",
+                    "type": "string",
+                    "title": "Preload File Modify User",
+                    "example": "somebody.else@acme.org"
+                },
+                "PreloadFileCreateDate": {
+                    "format": "date-time",
+                    "description": "Optional create date and time of the file prior to up-loading to the platform.",
+                    "x-osdu-frame-of-reference": "DateTime",
+                    "type": "string",
+                    "title": "Preload File Create Date",
+                    "example": "2019-12-16T11:46:20.163Z"
+                },
+                "Checksum": {
+                    "pattern": "^([0-9a-fA-F]{2})+$",
+                    "description": "Checksum of file bytes - a hexadecimal number with even number of bytes.",
+                    "type": "string",
+                    "title": "Checksum",
+                    "example": "d41d8cd98f00b204e9800998ecf8427e"
+                },
+                "FileSource": {
+                    "description": "The location of the file. It can be a relative path. The actual access is provided via the File Service. When used in context of a FileCollection (dataset--FileCollection*) FileSource is a relative path from the FileCollectionPath. It can be used by consumers to pull an individual file if they so choose by concatenating the FileCollectionPath with the FileSource. This property is required.",
+                    "type": "string",
+                    "title": "File Source",
+                    "example": "s3://default_bucket/r1/data/provided/documents/1000.witsml"
+                },
+                "ChecksumAlgorithm": {
+                    "description": "The name of the checksum algorithm e.g. MD5, SHA-256.",
+                    "type": "string",
+                    "title": "Checksum Algorithm",
+                    "example": "SHA-256"
+                },
+                "PreloadFilePath": {
+                    "description": "File system path to the data file as it existed before loading to the data platform.",
+                    "type": "string",
+                    "title": "Preload File Path",
+                    "example": "s3://staging-area/r7/raw-data/provided/documents/1000.witsml"
+                },
+                "PreloadFileModifyDate": {
+                    "format": "date-time",
+                    "description": "Optional last modified date and time of the file prior to up-loading to the platform.",
+                    "x-osdu-frame-of-reference": "DateTime",
+                    "type": "string",
+                    "title": "Preload File Modify Date",
+                    "example": "2019-12-20T17:20:05.356Z"
+                },
+                "PreloadFileCreateUser": {
+                    "description": "Optional user name or reference, who created the file prior to up-loading to the platform.",
+                    "type": "string",
+                    "title": "Preload File Create User",
+                    "example": "somebody@acme.org"
+                },
+                "EncodingFormatTypeID": {
+                    "pattern": "^[\\w\\-\\.]+:reference-data\\-\\-EncodingFormatType:[\\w\\-\\.\\:\\%]+:[0-9]*$",
+                    "description": "Only used in FileCollection where the EncodingFormatType differs from data DatasetDefault specified in data.EncodingFormatTypeID: the media type specification for this dataset.",
+                    "x-osdu-relationship": [
+                        {
+                            "EntityType": "EncodingFormatType",
+                            "GroupType": "reference-data"
+                        }
+                    ],
+                    "type": "string",
+                    "title": "Encoding Format Type ID",
+                    "example": "namespace:reference-data--EncodingFormatType:application%2Fgeo%2Bjson:"
+                },
+                "Name": {
+                    "description": "Optional, user-friendly file name.",
+                    "type": "string",
+                    "title": "Name",
+                    "example": "1000.witsml"
+                },
+                "FileSize": {
+                    "format": "integer",
+                    "pattern": "^[0-9]+$",
+                    "description": "Length of file in bytes. Implemented as string. The value must be convertible to a long integer (sizes can become very large).",
+                    "type": "string",
+                    "title": "File Size",
+                    "example": 95463
+                }
+            },
+            "required": [
+                "FileSource"
+            ],
+            "$id": "https://schema.osdu.opengroup.org/json/abstract/AbstractFileSourceInfo.1.0.0.json"
+        },
+        "opendes:wks:AbstractAccessControlList:1.0.0": {
+            "x-osdu-inheriting-from-kind": [],
+            "x-osdu-license": "Copyright 2021, The Open Group \\nLicensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 . Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.",
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "x-osdu-schema-source": "osdu:wks:AbstractAccessControlList:1.0.0",
+            "description": "The access control tags associated with this entity. This structure is included by the SystemProperties \"acl\", which is part of all OSDU records. Not extensible.",
+            "additionalProperties": false,
+            "title": "Access Control List",
+            "type": "object",
+            "properties": {
+                "viewers": {
+                    "description": "The list of viewers to which this data record is accessible/visible/discoverable formatted as an email (core.common.model.storage.validation.ValidationDoc.EMAIL_REGEX).",
+                    "title": "List of Viewers",
+                    "type": "array",
+                    "items": {
+                        "pattern": "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$",
+                        "type": "string"
+                    }
+                },
+                "owners": {
+                    "description": "The list of owners of this data record formatted as an email (core.common.model.storage.validation.ValidationDoc.EMAIL_REGEX).",
+                    "title": "List of Owners",
+                    "type": "array",
+                    "items": {
+                        "pattern": "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$",
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "owners",
+                "viewers"
+            ],
+            "$id": "https://schema.osdu.opengroup.org/json/abstract/AbstractAccessControlList.1.0.0.json"
+        },
+        "opendes:wks:AbstractDataset:1.0.0": {
+            "x-osdu-inheriting-from-kind": [],
+            "x-osdu-license": "Copyright 2021, The Open Group \\nLicensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 . Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.",
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "x-osdu-schema-source": "osdu:wks:AbstractDataset:1.0.0",
+            "description": "Schema fragment holding properties common for all datasets.",
+            "x-osdu-review-status": "Accepted",
+            "title": "AbstractDataset",
+            "type": "object",
+            "properties": {
+                "Endian": {
+                    "description": "Endianness of binary value.  Enumeration: \"BIG\", \"LITTLE\".  If absent, applications will need to interpret from context indicators.",
+                    "type": "string",
+                    "enum": [
+                        "BIG",
+                        "LITTLE"
+                    ]
+                },
+                "Description": {
+                    "description": "An optional, textual description of the dataset.",
+                    "type": "string",
+                    "title": "Description",
+                    "example": "As originally delivered by ACME.com."
+                },
+                "DatasetProperties": {
+                    "description": "Placeholder for a specialization.",
+                    "type": "object",
+                    "title": "Dataset Properties",
+                    "example": {}
+                },
+                "TotalSize": {
+                    "format": "integer",
+                    "pattern": "^[0-9]+$",
+                    "description": "Total size of the dataset in bytes; for files it is the same as declared in FileSourceInfo.FileSize or the sum of all individual files. Implemented as string. The value must be convertible to a long integer (sizes can become very large).",
+                    "type": "string",
+                    "title": "Total Size",
+                    "example": 13245217273
+                },
+                "EncodingFormatTypeID": {
+                    "x-osdu-relationship": [
+                        {
+                            "EntityType": "EncodingFormatType",
+                            "GroupType": "reference-data"
+                        }
+                    ],
+                    "pattern": "^[\\w\\-\\.]+:reference-data\\-\\-EncodingFormatType:[\\w\\-\\.\\:\\%]+:[0-9]*$",
+                    "description": "EncodingFormatType ID reference value relationship. It can me a mime-type or media-type.",
+                    "type": "string",
+                    "title": "Encoding Format Type ID",
+                    "example": "namespace:reference-data--EncodingFormatType:text%2Fcsv:"
+                },
+                "Name": {
+                    "description": "An optional name of the dataset, e.g. a user friendly file or file collection name.",
+                    "type": "string",
+                    "title": "Name",
+                    "example": "Dataset X221/15"
+                },
+                "SchemaFormatTypeID": {
+                    "x-osdu-relationship": [
+                        {
+                            "EntityType": "SchemaFormatType",
+                            "GroupType": "reference-data"
+                        }
+                    ],
+                    "pattern": "^[\\w\\-\\.]+:reference-data\\-\\-SchemaFormatType:[\\w\\-\\.\\:\\%]+:[0-9]*$",
+                    "description": "Relationship to the SchemaFormatType reference value.",
+                    "type": "string",
+                    "title": "Schema Format Type ID",
+                    "example": "namespace:reference-data--SchemaFormatType:CWLS%20LAS3:"
+                }
+            },
+            "required": [
+                "DatasetProperties"
+            ],
+            "$id": "https://schema.osdu.opengroup.org/json/abstract/AbstractDataset.1.0.0.json"
+        },
+        "opendes:wks:AbstractLegalParentList:1.0.0": {
+            "x-osdu-inheriting-from-kind": [],
+            "x-osdu-license": "Copyright 2021, The Open Group \\nLicensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 . Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.",
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "x-osdu-schema-source": "osdu:wks:AbstractLegalParentList:1.0.0",
+            "description": "A list of entity IDs in the data ecosystem, which act as legal parents to the current entity. This structure is included by the SystemProperties \"ancestry\", which is part of all OSDU records. Not extensible.",
+            "additionalProperties": false,
+            "title": "Parent List",
+            "type": "object",
+            "properties": {
+                "parents": {
+                    "description": "An array of none, one or many entity references in the data ecosystem, which identify the source of data in the legal sense. In contract to other relationships, the source record version is required. Example: the 'parents' will be queried when e.g. the subscription of source data services is terminated; access to the derivatives is also terminated.",
+                    "title": "Parents",
+                    "type": "array",
+                    "items": {
+                        "x-osdu-relationship": [],
+                        "pattern": "^[\\w\\-\\.]+:[\\w\\-\\.]+:[\\w\\-\\.\\:\\%]+:[0-9]+$",
+                        "type": "string"
+                    },
+                    "example": []
+                }
+            },
+            "$id": "https://schema.osdu.opengroup.org/json/abstract/AbstractLegalParentList.1.0.0.json"
+        },
+        "opendes:wks:AbstractMetaItem:1.0.0": {
+            "x-osdu-inheriting-from-kind": [],
+            "oneOf": [
+                {
+                    "title": "FrameOfReferenceUOM",
+                    "type": "object",
+                    "properties": {
+                        "persistableReference": {
+                            "description": "The self-contained, persistable reference string uniquely identifying the Unit.",
+                            "title": "UOM Persistable Reference",
+                            "type": "string",
+                            "example": "{\"abcd\":{\"a\":0.0,\"b\":1200.0,\"c\":3937.0,\"d\":0.0},\"symbol\":\"ft[US]\",\"baseMeasurement\":{\"ancestry\":\"L\",\"type\":\"UM\"},\"type\":\"UAD\"}"
+                        },
+                        "kind": {
+                            "const": "Unit",
+                            "description": "The kind of reference, 'Unit' for FrameOfReferenceUOM.",
+                            "title": "UOM Reference Kind"
+                        },
+                        "propertyNames": {
+                            "description": "The list of property names, to which this meta data item provides Unit context to. Data structures, which come in a single frame of reference, can register the property name, others require a full path like \"Data.StructureA.PropertyB\" to define a unique context.",
+                            "title": "UOM Property Names",
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "example": [
+                                "HorizontalDeflection.EastWest",
+                                "HorizontalDeflection.NorthSouth"
+                            ]
+                        },
+                        "name": {
+                            "description": "The unit symbol or name of the unit.",
+                            "title": "UOM Unit Symbol",
+                            "type": "string",
+                            "example": "ft[US]"
+                        },
+                        "unitOfMeasureID": {
+                            "x-osdu-relationship": [
+                                {
+                                    "EntityType": "UnitOfMeasure",
+                                    "GroupType": "reference-data"
+                                }
+                            ],
+                            "pattern": "^[\\w\\-\\.]+:reference-data\\-\\-UnitOfMeasure:[\\w\\-\\.\\:\\%]+:[0-9]*$",
+                            "description": "SRN to unit of measure reference.",
+                            "type": "string",
+                            "example": "namespace:reference-data--UnitOfMeasure:ftUS:"
+                        }
+                    },
+                    "required": [
+                        "kind",
+                        "persistableReference"
+                    ]
+                },
+                {
+                    "title": "FrameOfReferenceCRS",
+                    "type": "object",
+                    "properties": {
+                        "coordinateReferenceSystemID": {
+                            "x-osdu-relationship": [
+                                {
+                                    "EntityType": "CoordinateReferenceSystem",
+                                    "GroupType": "reference-data"
+                                }
+                            ],
+                            "pattern": "^[\\w\\-\\.]+:reference-data\\-\\-CoordinateReferenceSystem:[\\w\\-\\.\\:\\%]+:[0-9]*$",
+                            "description": "SRN to CRS reference.",
+                            "type": "string",
+                            "example": "namespace:reference-data--CoordinateReferenceSystem:EPSG.32615:"
+                        },
+                        "persistableReference": {
+                            "description": "The self-contained, persistable reference string uniquely identifying the CRS.",
+                            "title": "CRS Persistable Reference",
+                            "type": "string",
+                            "example": "{\"authCode\":{\"auth\":\"EPSG\",\"code\":\"32615\"},\"type\":\"LBC\",\"ver\":\"PE_10_3_1\",\"name\":\"WGS_1984_UTM_Zone_15N\",\"wkt\":\"PROJCS[\\\"WGS_1984_UTM_Zone_15N\\\",GEOGCS[\\\"GCS_WGS_1984\\\",DATUM[\\\"D_WGS_1984\\\",SPHEROID[\\\"WGS_1984\\\",6378137.0,298.257223563]],PRIMEM[\\\"Greenwich\\\",0.0],UNIT[\\\"Degree\\\",0.0174532925199433]],PROJECTION[\\\"Transverse_Mercator\\\"],PARAMETER[\\\"False_Easting\\\",500000.0],PARAMETER[\\\"False_Northing\\\",0.0],PARAMETER[\\\"Central_Meridian\\\",-93.0],PARAMETER[\\\"Scale_Factor\\\",0.9996],PARAMETER[\\\"Latitude_Of_Origin\\\",0.0],UNIT[\\\"Meter\\\",1.0],AUTHORITY[\\\"EPSG\\\",32615]]\"}"
+                        },
+                        "kind": {
+                            "const": "CRS",
+                            "description": "The kind of reference, constant 'CRS' for FrameOfReferenceCRS.",
+                            "title": "CRS Reference Kind"
+                        },
+                        "propertyNames": {
+                            "description": "The list of property names, to which this meta data item provides CRS context to. Data structures, which come in a single frame of reference, can register the property name, others require a full path like \"Data.StructureA.PropertyB\" to define a unique context.",
+                            "title": "CRS Property Names",
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "example": [
+                                "KickOffPosition.X",
+                                "KickOffPosition.Y"
+                            ]
+                        },
+                        "name": {
+                            "description": "The name of the CRS.",
+                            "title": "CRS Name",
+                            "type": "string",
+                            "example": "NAD27 * OGP-Usa Conus / North Dakota South [32021,15851]"
+                        }
+                    },
+                    "required": [
+                        "kind",
+                        "persistableReference"
+                    ]
+                },
+                {
+                    "title": "FrameOfReferenceDateTime",
+                    "type": "object",
+                    "properties": {
+                        "persistableReference": {
+                            "description": "The self-contained, persistable reference string uniquely identifying DateTime reference.",
+                            "title": "DateTime Persistable Reference",
+                            "type": "string",
+                            "example": "{\"format\":\"yyyy-MM-ddTHH:mm:ssZ\",\"timeZone\":\"UTC\",\"type\":\"DTM\"}"
+                        },
+                        "kind": {
+                            "const": "DateTime",
+                            "description": "The kind of reference, constant 'DateTime', for FrameOfReferenceDateTime.",
+                            "title": "DateTime Reference Kind"
+                        },
+                        "propertyNames": {
+                            "description": "The list of property names, to which this meta data item provides DateTime context to. Data structures, which come in a single frame of reference, can register the property name, others require a full path like \"Data.StructureA.PropertyB\" to define a unique context.",
+                            "title": "DateTime Property Names",
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "example": [
+                                "Acquisition.StartTime",
+                                "Acquisition.EndTime"
+                            ]
+                        },
+                        "name": {
+                            "description": "The name of the DateTime format and reference.",
+                            "title": "DateTime Name",
+                            "type": "string",
+                            "example": "UTC"
+                        }
+                    },
+                    "required": [
+                        "kind",
+                        "persistableReference"
+                    ]
+                },
+                {
+                    "title": "FrameOfReferenceAzimuthReference",
+                    "type": "object",
+                    "properties": {
+                        "persistableReference": {
+                            "description": "The self-contained, persistable reference string uniquely identifying AzimuthReference.",
+                            "title": "AzimuthReference Persistable Reference",
+                            "type": "string",
+                            "example": "{\"code\":\"TrueNorth\",\"type\":\"AZR\"}"
+                        },
+                        "kind": {
+                            "const": "AzimuthReference",
+                            "description": "The kind of reference, constant 'AzimuthReference', for FrameOfReferenceAzimuthReference.",
+                            "title": "AzimuthReference Reference Kind"
+                        },
+                        "propertyNames": {
+                            "description": "The list of property names, to which this meta data item provides AzimuthReference context to. Data structures, which come in a single frame of reference, can register the property name, others require a full path like \"Data.StructureA.PropertyB\" to define a unique context.",
+                            "title": "AzimuthReference Property Names",
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "example": [
+                                "Bearing"
+                            ]
+                        },
+                        "name": {
+                            "description": "The name of the CRS or the symbol/name of the unit.",
+                            "title": "AzimuthReference Name",
+                            "type": "string",
+                            "example": "TrueNorth"
+                        }
+                    },
+                    "required": [
+                        "kind",
+                        "persistableReference"
+                    ]
+                }
+            ],
+            "x-osdu-license": "Copyright 2021, The Open Group \\nLicensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 . Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.",
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "x-osdu-schema-source": "osdu:wks:AbstractMetaItem:1.0.0",
+            "description": "A meta data item, which allows the association of named properties or property values to a Unit/Measurement/CRS/Azimuth/Time context.",
+            "title": "Frame of Reference Meta Data Item",
+            "$id": "https://schema.osdu.opengroup.org/json/abstract/AbstractMetaItem.1.0.0.json"
+        },
+        "opendes:wks:AbstractLegalTags:1.0.0": {
+            "x-osdu-inheriting-from-kind": [],
+            "x-osdu-license": "Copyright 2021, The Open Group \\nLicensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 . Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.",
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "x-osdu-schema-source": "osdu:wks:AbstractLegalTags:1.0.0",
+            "description": "Legal meta data like legal tags, relevant other countries, legal status. This structure is included by the SystemProperties \"legal\", which is part of all OSDU records. Not extensible.",
+            "additionalProperties": false,
+            "title": "Legal Meta Data",
+            "type": "object",
+            "properties": {
+                "legaltags": {
+                    "description": "The list of legal tags, which resolve to legal properties (like country of origin, export classification code, etc.) and rules with the help of the Compliance Service.",
+                    "title": "Legal Tags",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "otherRelevantDataCountries": {
+                    "description": "The list of other relevant data countries as an array of two-letter country codes, see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2.",
+                    "title": "Other Relevant Data Countries",
+                    "type": "array",
+                    "items": {
+                        "pattern": "^[A-Z]{2}$",
+                        "type": "string"
+                    }
+                },
+                "status": {
+                    "pattern": "^(compliant|uncompliant)$",
+                    "description": "The legal status. Set by the system after evaluation against the compliance rules associated with the \"legaltags\" using the Compliance Service.",
+                    "title": "Legal Status",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "legaltags",
+                "otherRelevantDataCountries"
+            ],
+            "$id": "https://schema.osdu.opengroup.org/json/abstract/AbstractLegalTags.1.0.0.json"
+        }
+    },
+    "properties": {
+        "ancestry": {
+            "description": "The links to data, which constitute the inputs.",
+            "title": "Ancestry",
+            "$ref": "#/definitions/opendes:wks:AbstractLegalParentList:1.0.0"
+        },
+        "data": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/opendes:wks:AbstractCommonResources:1.0.0"
+                },
+                {
+                    "$ref": "#/definitions/opendes:wks:AbstractDataset:1.0.0"
+                },
+                {
+                    "$ref": "#/definitions/opendes:wks:AbstractFile:1.0.0"
+                },
+                {
+                    "type": "object",
+                    "properties": {}
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "ExtensionProperties": {
+                            "type": "object"
+                        }
+                    }
+                }
+            ]
+        },
+        "kind": {
+            "pattern": "^[\\w\\-\\.]+:[\\w\\-\\.]+:[\\w\\-\\.]+:[0-9]+.[0-9]+.[0-9]+$",
+            "description": "The schema identification for the OSDU resource object following the pattern {Namespace}:{Source}:{Type}:{VersionMajor}.{VersionMinor}.{VersionPatch}. The versioning scheme follows the semantic versioning, https://semver.org/.",
+            "title": "Entity Kind",
+            "type": "string",
+            "example": "osdu:wks:dataset--File.Generic:1.0.0"
+        },
+        "acl": {
+            "description": "The access control tags associated with this entity.",
+            "title": "Access Control List",
+            "$ref": "#/definitions/opendes:wks:AbstractAccessControlList:1.0.0"
+        },
+        "version": {
+            "format": "int64",
+            "description": "The version number of this OSDU resource; set by the framework.",
+            "title": "Version Number",
+            "type": "integer",
+            "example": 1562066009929332
+        },
+        "tags": {
+            "description": "A generic dictionary of string keys mapping to string value. Only strings are permitted as keys and values.",
+            "additionalProperties": {
+                "type": "string"
+            },
+            "title": "Tag Dictionary",
+            "type": "object",
+            "example": {
+                "NameOfKey": "String value"
+            }
+        },
+        "modifyUser": {
+            "description": "The user reference, which created this version of this resource object. Set by the System.",
+            "title": "Resource Object Version Creation User Reference",
+            "type": "string",
+            "example": "some-user@some-company-cloud.com"
+        },
+        "modifyTime": {
+            "format": "date-time",
+            "description": "Timestamp of the time at which this version of the OSDU resource object was created. Set by the System. The value is a combined date-time string in ISO-8601 given in UTC.",
+            "title": "Resource Object Version Creation DateTime",
+            "type": "string",
+            "example": "2020-12-16T11:52:24.477Z"
+        },
+        "createTime": {
+            "format": "date-time",
+            "description": "Timestamp of the time at which initial version of this OSDU resource object was created. Set by the System. The value is a combined date-time string in ISO-8601 given in UTC.",
+            "title": "Resource Object Creation DateTime",
+            "type": "string",
+            "example": "2020-12-16T11:46:20.163Z"
+        },
+        "meta": {
+            "description": "The Frame of Reference meta data section linking the named properties to self-contained definitions.",
+            "title": "Frame of Reference Meta Data",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/opendes:wks:AbstractMetaItem:1.0.0"
+            }
+        },
+        "legal": {
+            "description": "The entity's legal tags and compliance status. The actual contents associated with the legal tags is managed by the Compliance Service.",
+            "title": "Legal Tags",
+            "$ref": "#/definitions/opendes:wks:AbstractLegalTags:1.0.0"
+        },
+        "createUser": {
+            "description": "The user reference, which created the first version of this resource object. Set by the System.",
+            "title": "Resource Object Creation User Reference",
+            "type": "string",
+            "example": "some-user@some-company-cloud.com"
+        },
+        "id": {
+            "pattern": "^[\\w\\-\\.]+:dataset\\-\\-File.Generic:[\\w\\-\\.\\:\\%]+$",
+            "description": "Previously called ResourceID or SRN which identifies this OSDU resource object without version.",
+            "title": "Entity ID",
+            "type": "string",
+            "example": "namespace:dataset--File.Generic:7c6c0a0d-9e6d-5087-bed9-106233ba57ea"
+        }
+    },
+    "$id": "https://schema.osdu.opengroup.org/json/dataset/File.Generic.1.0.0.json"
+}

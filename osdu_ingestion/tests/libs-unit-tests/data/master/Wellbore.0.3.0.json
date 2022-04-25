@@ -1,0 +1,57 @@
+{
+    "execution_context": {
+        "Payload": {
+            "authorization": "Bearer test",
+            "data-partition-id": "opendes",
+            "AppKey": "",
+            "kind_version": "3.0.0"
+        },
+        "$schema": "https://schema.osdu.opengroup.org/json/master-data/Wellbore.1.0.0.json",
+        "$filename": "load_Wellbore.1.0.0_350112350400.json",
+        "manifest": {
+            "kind": "test:test:Manifest:1.0.0",
+            "ReferenceData": [],
+            "MasterData": [
+                {
+                    "id": "opendes:master-data/Wellbore:350112350400",
+                    "kind": "opendes:osdu:TestMaster:0.3.0",
+                    "groupType": "master-data",
+                    "version": 1,
+                    "acl": {
+                        "owners": [
+                            "data.default.viewers@opendes.osdu-gcp.go3-nrg.projects.epam.com"
+                        ],
+                        "viewers": [
+                            "data.default.owners@opendes.osdu-gcp.go3-nrg.projects.epam.com"
+                        ]
+                    },
+                    "legal": {
+                        "legaltags": [
+                            "opendes-demo-legaltag"
+                        ],
+                        "otherRelevantDataCountries": [
+                            "srn:opendes:master-data/GeoPoliticalEntity:USA:"
+                        ],
+                        "status": "srn:opendes:reference-data/LegalStatus:public:1111"
+                    },
+                    "resourceHostRegionIDs": [
+                        "srn:opendes:reference-data/OSDURegion:US-EAST:"
+                    ],
+                    "resourceObjectCreationDateTime": "2020-10-16T11:14:45-05:00",
+                    "resourceVersionCreationDateTime": "2020-10-16T11:14:45-05:00",
+                    "resourceSecurityClassification": "srn:opendes:reference-data/ResourceSecurityClassification:public:",
+                    "source": "srn:opendes:master-data/Organisation:Oklahoma Corporation Commission:",
+                    "existenceKind": "srn:opendes:reference-data/ExistenceKind:Active:",
+                    "licenseState": "srn:opendes:reference-data/LicenseState:Unlicensed:",
+                    "data": {
+                        "SequenceNumber": 1
+                    },
+                    "schema": "test:test:GenericMasterData:1.0.0"
+                }
+            ],
+            "Data": {}
+        }
+    },
+    "workflow_name": "osdu_ingest",
+    "run_id": "foo"
+}

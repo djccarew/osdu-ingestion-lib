@@ -1,0 +1,371 @@
+{
+    "x-osdu-license": "Copyright 2020, The Open Group \\nLicensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 . Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "description": "A hole in the ground extending from a point at the earth's surface to the maximum point of penetration.",
+    "additionalProperties": true,
+    "title": "Wellbore",
+    "type": "object",
+    "definitions": {
+        "opendes:osdu:AbstractMetaItem:1.0.0": {
+            "x-osdu-license": "Copyright 2020, The Open Group \\nLicensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 . Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.",
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "description": "A meta data item, which allows the association of named properties or property values to a Unit/Measurement/CRS/Azimuth/Time context.",
+            "title": "Frame of Reference Meta Data Item",
+            "type": "object",
+            "properties": {
+                "persistableReference": {
+                    "description": "The persistable reference string uniquely identifying the CRS or Unit.",
+                    "title": "Persistable Reference",
+                    "type": "string",
+                    "example": "{\"scaleOffset\":{\"scale\":0.3048006096012192,\"offset\":0.0},\"symbol\":\"ftUS\",\"baseMeasurement\":{\"ancestry\":\"Length\",\"type\":\"UM\"},\"type\":\"USO\"}"
+                },
+                "kind": {
+                    "description": "The kind of reference, unit, measurement, CRS or azimuth reference.",
+                    "title": "Reference Kind",
+                    "type": "string",
+                    "enum": [
+                        "CRS",
+                        "Unit",
+                        "Measurement",
+                        "AzimuthReference",
+                        "DateTime"
+                    ]
+                },
+                "propertyNames": {
+                    "description": "The list of property names, to which this meta data item provides Unit/CRS context to. Data structures, which come in a single frame of reference, can register the property name, others require a full path like \"data.structureA.propertyB\" to define a unique context.",
+                    "title": "Property Names",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "example": [
+                        "elevationFromMsl",
+                        "totalDepthMdDriller",
+                        "wellHeadProjected"
+                    ]
+                },
+                "name": {
+                    "description": "The name of the CRS or the symbol/name of the unit.",
+                    "title": "Name or Symbol",
+                    "type": "string",
+                    "example": [
+                        "NAD27 * OGP-Usa Conus / North Dakota South [32021,15851]",
+                        "ft"
+                    ]
+                },
+                "propertyValues": {
+                    "description": "The list of property values, to which this meta data item provides Unit/CRS context to. Typically a unit symbol is a value to a data structure; this symbol is then registered in this propertyValues array and the persistableReference provides the absolute reference.",
+                    "title": "Property Values",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "example": [
+                        "F",
+                        "ftUS",
+                        "deg"
+                    ]
+                },
+                "uncertainty": {
+                    "description": "The uncertainty of the values measured given the unit or CRS unit.",
+                    "title": "Uncertainty",
+                    "type": "number"
+                }
+            },
+            "required": [
+                "kind",
+                "persistableReference"
+            ],
+            "$id": "https://schema.osdu.opengroup.org/json/abstract/AbstractMetaItem.1.0.0.json"
+        },
+        "opendes:osdu:AbstractLegalTags:1.0.0": {
+            "x-osdu-license": "Copyright 2020, The Open Group \\nLicensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 . Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.",
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "description": "Legal meta data like legal tags, relevant other countries, legal status.",
+            "additionalProperties": true,
+            "title": "Legal Meta Data",
+            "type": "object",
+            "properties": {
+                "legaltags": {
+                    "description": "The list of legal tags.",
+                    "title": "Legal Tags",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "otherRelevantDataCountries": {
+                    "description": "The list of other relevant data countries.",
+                    "title": "Other Relevant Data Countries",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "status": {
+                    "description": "The legal status.",
+                    "title": "Legal Status",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "legaltags",
+                "otherRelevantDataCountries"
+            ],
+            "$id": "https://schema.osdu.opengroup.org/json/abstract/AbstractLegalTags.1.0.0.json"
+        },
+        "opendes:osdu:AbstractAccessControlList:1.0.0": {
+            "x-osdu-license": "Copyright 2020, The Open Group \\nLicensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 . Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.",
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "description": "The access control tags associated with this entity.",
+            "additionalProperties": true,
+            "title": "Access Control List",
+            "type": "object",
+            "properties": {
+                "viewers": {
+                    "description": "The list of viewers to which this data record is accessible/visible/discoverable.",
+                    "title": "List of Viewers",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "owners": {
+                    "description": "The list of owners of this data record.",
+                    "title": "List of Owners",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "owners",
+                "viewers"
+            ],
+            "$id": "https://schema.osdu.opengroup.org/json/abstract/AbstractAccessControlList.1.0.0.json"
+        },
+        "opendes:osdu:AbstractLegalParentList:1.0.0": {
+            "x-osdu-license": "Copyright 2020, The Open Group \\nLicensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 . Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.",
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "description": "A list of entity IDs in the data ecosystem, which act as legal parents to the current entity.",
+            "title": "Parent List",
+            "type": "object",
+            "properties": {
+                "parents": {
+                    "description": "An array of none, one or many entity references in the data ecosystem, which identify the source of data in the legal sense. Example: the 'parents' will be queried when e.g. the subscription of source data services is terminated; access to the derivatives is also terminated.",
+                    "title": "Parents",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "example": []
+                }
+            },
+            "$id": "https://schema.osdu.opengroup.org/json/abstract/AbstractLegalParentList.1.0.0.json"
+        },
+        "opendes:osdu:AbstractCoordinates:1.0.0": {
+            "x-osdu-license": "Copyright 2020, The Open Group \\nLicensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 . Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.",
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "description": "A geographic position on the surface of the earth.",
+            "title": "AbstractCoordinates",
+            "type": "object",
+            "properties": {
+                "x": {
+                    "description": "x is Easting or Longitude.",
+                    "type": "number"
+                },
+                "y": {
+                    "description": "y is Northing or Latitude.",
+                    "type": "number"
+                }
+            },
+            "$id": "https://schema.osdu.opengroup.org/json/abstract/AbstractCoordinates.1.0.0.json"
+        }
+    },
+    "properties": {
+        "groupType": {
+            "const": "master-data",
+            "description": "The OSDU GroupType assigned to this resource object.",
+            "title": "Group Type"
+        },
+        "ancestry": {
+            "description": "The links to data, which constitute the inputs.",
+            "title": "Ancestry",
+            "$ref": "#/definitions/opendes:osdu:AbstractLegalParentList:1.0.0"
+        },
+        "resourceCurationStatus": {
+            "pattern": "^srn:opendes:reference-data\/ResourceCurationStatus:[^:]+:[0-9]*$",
+            "description": "Describes the current Curation status.",
+            "title": "Resource Curation Status",
+            "type": "string"
+        },
+        "licenseState": {
+            "pattern": "^srn:opendes:reference-data\/LicenseState:[^:]+:[0-9]*$",
+            "description": "Indicates what kind of ownership Company has over data.",
+            "title": "License State",
+            "type": "string"
+        },
+        "data": {
+            "allOf": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "VerticalMeasurements": {
+                            "description": "List of all depths and elevations pertaining to the wellbore, like, plug back measured depth, total measured depth, KB elevation",
+                            "type": "array"
+                        },
+                        "PrimaryMaterialID": {
+                            "pattern": "^srn:opendes:reference-data\/MaterialType:[^:]+:[0-9]*$",
+                            "description": "The primary material injected/produced from the wellbore.",
+                            "type": "string"
+                        },
+                        "SequenceNumber": {
+                            "description": "A number that indicates the order in which wellbores were drilled.",
+                            "type": "integer"
+                        },
+                        "TargetFormation": {
+                            "pattern": "^srn:opendes:reference-data\/GeologicalFormation:[^:]+:[0-9]*$",
+                            "description": "The Formation of interest for which the Wellbore is drilled to interact with. The Wellbore may terminate in a lower formation if the requirement is to drill through the entirety of the target formation, therefore this is not necessarily the Formation at TD.",
+                            "type": "string"
+                        },
+                        "KickOffWellbore": {
+                            "pattern": "^srn:opendes:master-data\/Wellbore:[^:]+:[0-9]*$",
+                            "description": "This is a pointer to the parent wellbore. The wellbore that starts from top has no parent.",
+                            "type": "string"
+                        },
+                        "DefaultVerticalMeasurementID": {
+                            "description": "The default datum reference point, or zero depth point, used to determine other points vertically in a wellbore.  References an entry in the Vertical Measurements array of this wellbore.",
+                            "type": "string"
+                        },
+
+                        "WellID": {
+                            "pattern": "^srn:opendes:master-data\/Well:[^:]+:[0-9]*$",
+                            "type": "string"
+                        },
+
+                        "TrajectoryTypeID": {
+                            "pattern": "^srn:opendes:reference-data\/WellboreTrajectoryType:[^:]+:[0-9]*$",
+                            "description": "Describes the predominant shapes the wellbore path can follow if deviated from vertical. Sample Values: Horizontal, Vertical, Directional.",
+                            "type": "string"
+                        },
+                        "DefinitiveTrajectoryID": {
+                            "pattern": "^srn:opendes:work-product-component\/WellboreTrajectory:[^:]+:[0-9]+$",
+                            "description": "SRN of Wellbore Trajectory which is considered the authoritative or preferred version.",
+                            "type": "string"
+                        }
+                    }
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "ExtensionProperties": {
+                            "type": "object",
+                            "properties": {}
+                        }
+                    }
+                }
+            ]
+        },
+        "kind": {
+            "pattern": "^[A-Za-z0-9-_]+:[A-Za-z0-9-_]+:[A-Za-z0-9-_]+:[0-9]+.[0-9]+.[0-9]+$",
+            "description": "The schema identification for the OSDU resource object following the pattern <Namespace>:<Source>:<Type>:<VersionMajor>.<VersionMinor>.<VersionPatch>. The versioning scheme follows the semantic versioning, https://semver.org/.",
+            "title": "Entity Kind",
+            "type": "string",
+            "example": "namespace:osdu:Wellbore:2.7.112"
+        },
+        "acl": {
+            "description": "The access control tags associated with this entity.",
+            "title": "Access Control List",
+            "$ref": "#/definitions/opendes:osdu:AbstractAccessControlList:1.0.0"
+        },
+        "source": {
+            "pattern": "^srn:opendes:master-data\/Organisation:[^:]+:[0-9]*$",
+            "description": "Where did the data resource originate? This could be many kinds of entities, such as company, agency, team or individual.",
+            "title": "Data Source",
+            "type": "string"
+        },
+        "version": {
+            "format": "int64",
+            "description": "The version number of this OSDU resource; set by the framework.",
+            "title": "Version Number",
+            "type": "integer",
+            "example": 1831253916104085
+        },
+        "resourceVersionCreationDateTime": {
+            "format": "date-time",
+            "description": "Timestamp of the time when the current version of this resource entered the OSDU.",
+            "title": "Resource Version Creation DateTime",
+            "type": "string"
+        },
+        "resourceHomeRegionID": {
+            "pattern": "^srn:opendes:reference-data\/OSDURegion:[^:]+:[0-9]*$",
+            "description": "The name of the home [cloud environment] region for this OSDU resource object.",
+            "title": "Resource Home Region ID",
+            "type": "string"
+        },
+        "resourceObjectCreationDateTime": {
+            "format": "date-time",
+            "description": "Timestamp of the time at which Version 1 of this OSDU resource object was originated.",
+            "title": "Resource Object Creation DateTime",
+            "type": "string"
+        },
+        "resourceSecurityClassification": {
+            "pattern": "^srn:opendes:reference-data\/ResourceSecurityClassification:[^:]+:[0-9]*$",
+            "description": "Classifies the security level of the resource.",
+            "title": "Resource Security Classification",
+            "type": "string"
+        },
+        "resourceHostRegionIDs": {
+            "description": "The name of the host [cloud environment] region(s) for this OSDU resource object.",
+            "title": "Resource Host Region ID",
+            "type": "array",
+            "items": {
+                "pattern": "^srn:opendes:reference-data\/OSDURegion:[^:]+:[0-9]*$",
+                "type": "string"
+            }
+        },
+        "resourceLifecycleStatus": {
+            "pattern": "^srn:opendes:reference-data\/ResourceLifecycleStatus:[^:]+:[0-9]*$",
+            "description": "Describes the current Resource Lifecycle status.",
+            "title": "Resource Lifecycle Status",
+            "type": "string"
+        },
+        "legal": {
+            "description": "The entity's legal tags and compliance status.",
+            "title": "Legal Tags",
+            "$ref": "#/definitions/opendes:osdu:AbstractLegalTags:1.0.0"
+        },
+        "id": {
+            "pattern": "^opendes:master-data/Wellbore:[^:]+$",
+            "description": "The SRN which identifies this OSDU resource object without version.",
+            "title": "Entity ID",
+            "type": "string",
+            "example": "srn:opendes:master-data/Wellbore:2adac27b-5d84-5bcd-89f2-93ee709c06d9"
+        },
+        "existenceKind": {
+            "pattern": "^srn:opendes:reference-data\/ExistenceKind:[^:]+:[0-9]*$",
+            "description": "Where does this data resource sit in the cradle-to-grave span of its existence?",
+            "title": "Existence Kind",
+            "type": "string"
+        },
+        "persistableReferences": {
+            "description": "The meta data section linking the 'unitKey', 'crsKey' to self-contained definitions.",
+            "title": "Frame of Reference Meta Data",
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/opendes:osdu:AbstractMetaItem:1.0.0"
+            }
+        }
+    },
+    "required": [
+        "id",
+        "kind",
+        "groupType",
+        "version",
+        "legal",
+        "resourceObjectCreationDateTime",
+        "resourceVersionCreationDateTime"
+    ],
+    "$id": "https://schema.osdu.opengroup.org/json/master-data/Wellbore.1.0.0.json"
+}

@@ -1,0 +1,166 @@
+[
+    {
+        "id": "osdu:dataset--FileGeneric:RESTRICTED",
+        "kind": "osdu:wks:dataset--File.Generic:1.0.0",
+        "acl": {
+            "owners": [],
+            "viewers": []
+        },
+        "legal": {
+            "legaltags": [],
+            "otherRelevantDataCountries": []
+        },
+        "data": {
+            "ResourceSecurityClassification": "osdu:reference-data--ResourceSecurityClassification:RESTRICTED:",
+            "SchemaFormatTypeID": "osdu:reference-data--SchemaFormatType:TabSeparatedColumnarText:",
+            "DatasetProperties": {
+                "FileSourceInfo": {
+                    "FileSource": "",
+                    "PreloadFilePath": "s3://osdu-seismic-test-data/r1/data/provided/markers/7587.csv"
+                }
+            }
+        }
+    },
+    {
+        "id": "surrogate-key:wpc-1",
+        "kind": "osdu:wks:work-product-component--WellboreMarker:1.0.0",
+        "acl": {
+            "owners": [],
+            "viewers": []
+        },
+        "legal": {
+            "legaltags": [],
+            "otherRelevantDataCountries": []
+        },
+        "data": {
+            "ResourceSecurityClassification": "osdu:reference-data--ResourceSecurityClassification:RESTRICTED:",
+            "Name": "7587.csv",
+            "Description": "Wellbore Marker",
+            "Datasets": [
+                "osdu:dataset--FileGeneric:RESTRICTED:"
+            ],
+            "WellboreID": "osdu:master-data--Wellbore:7587:",
+            "Markers": [
+                {
+                    "MarkerName": "North Sea Supergroup",
+                    "MarkerMeasuredDepth": 0.0
+                },
+                {
+                    "MarkerName": "Ommelanden Formation",
+                    "MarkerMeasuredDepth": 1555.0
+                },
+                {
+                    "MarkerName": "Texel Marlstone Member",
+                    "MarkerMeasuredDepth": 2512.5
+                },
+                {
+                    "MarkerName": "Upper Holland Marl Member",
+                    "MarkerMeasuredDepth": 2606.0
+                },
+                {
+                    "MarkerName": "Middle Holland Claystone Member",
+                    "MarkerMeasuredDepth": 2723.0
+                },
+                {
+                    "MarkerName": "Vlieland Claystone Formation",
+                    "MarkerMeasuredDepth": 2758.0
+                },
+                {
+                    "MarkerName": "Lower Volpriehausen Sandstone Member",
+                    "MarkerMeasuredDepth": 2977.5
+                },
+                {
+                    "MarkerName": "Rogenstein Member",
+                    "MarkerMeasuredDepth": 3018.0
+                },
+                {
+                    "MarkerName": "FAULT",
+                    "MarkerMeasuredDepth": 3043.0
+                },
+                {
+                    "MarkerName": "Upper Zechstein salt",
+                    "MarkerMeasuredDepth": 3043.0
+                },
+                {
+                    "MarkerName": "FAULT",
+                    "MarkerMeasuredDepth": 3544.0
+                },
+                {
+                    "MarkerName": "Z3 Carbonate Member",
+                    "MarkerMeasuredDepth": 3544.0
+                },
+                {
+                    "MarkerName": "Z3 Main Anhydrite Member",
+                    "MarkerMeasuredDepth": 3587.0
+                },
+                {
+                    "MarkerName": "FAULT",
+                    "MarkerMeasuredDepth": 3622.0
+                },
+                {
+                    "MarkerName": "Z3 Salt Member",
+                    "MarkerMeasuredDepth": 3622.0
+                },
+                {
+                    "MarkerName": "Z3 Main Anhydrite Member",
+                    "MarkerMeasuredDepth": 3666.5
+                },
+                {
+                    "MarkerName": "Z3 Carbonate Member",
+                    "MarkerMeasuredDepth": 3688.0
+                },
+                {
+                    "MarkerName": "Z2 Salt Member",
+                    "MarkerMeasuredDepth": 3709.0
+                },
+                {
+                    "MarkerName": "Z2 Basal Anhydrite Member",
+                    "MarkerMeasuredDepth": 3985.0
+                },
+                {
+                    "MarkerName": "Z2 Carbonate Member",
+                    "MarkerMeasuredDepth": 3996.0
+                },
+                {
+                    "MarkerName": "Z1 (Werra) Formation",
+                    "MarkerMeasuredDepth": 4022.5
+                },
+                {
+                    "MarkerName": "Ten Boer Member",
+                    "MarkerMeasuredDepth": 4070.0
+                },
+                {
+                    "MarkerName": "Upper Slochteren Member",
+                    "MarkerMeasuredDepth": 4128.5
+                },
+                {
+                    "MarkerName": "Ameland Member",
+                    "MarkerMeasuredDepth": 4231.0
+                },
+                {
+                    "MarkerName": "Lower Slochteren Member",
+                    "MarkerMeasuredDepth": 4283.5
+                }
+            ]
+        }
+    },
+    {
+        "kind": "osdu:wks:work-product--WorkProduct:1.0.0",
+        "acl": {
+            "owners": [],
+            "viewers": []
+        },
+        "legal": {
+            "legaltags": [],
+            "otherRelevantDataCountries": []
+        },
+        "data": {
+            "ResourceSecurityClassification": "osdu:reference-data--ResourceSecurityClassification:RESTRICTED:",
+            "Name": "7587.csv",
+            "Description": "Wellbore Marker",
+            "Components": [
+                "surrogate-key:wpc-1"
+            ]
+        }
+    }
+]

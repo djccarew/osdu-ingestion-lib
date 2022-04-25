@@ -1,0 +1,13 @@
+{
+    "$id": "https://schema.osdu.opengroup.org/json/master-data/Wellbore.1.0.0.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Master",
+    "description": "A hole in the ground extending from a point at the earth's surface to the maximum point of penetration.",
+    "type": "object",
+    "properties": {
+        "SequenceNumber": {
+            "description": "A number that indicates the order in which wellbores were drilled.",
+            "type": "integer"
+        }
+    }
+}

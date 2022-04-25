@@ -1,0 +1,7 @@
+jsonschema==3.2.0
+requests==2.25.1
+strict-rfc3339==0.7
+tenacity==6.2.0
+toposort==1.6
+
+dataclasses==0.8;python_version<"3.7"

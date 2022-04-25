@@ -1,0 +1,9 @@
+[
+    "surrogate-key:file-2",
+    "osdu:reference-data--ResourceSecurityClassification:RESTRICTED",
+    "osdu:master-data--Wellbore:1013",
+    "osdu:reference-data--UnitOfMeasure:M",
+    "osdu:reference-data--UnitOfMeasure:US/F",
+    "osdu:reference-data--UnitOfMeasure:GAPI:1a",
+    "osdu:reference-data--UnitOfMeasure:G/C3"
+]

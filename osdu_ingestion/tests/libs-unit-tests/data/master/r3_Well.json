@@ -1,0 +1,73 @@
+{
+    "kind":  "Manifest:1.0.0",
+    "MasterData": [
+        {
+            "id": "osdu:master-data--Well:BA050018",
+            "kind": "osdu:wks:master-data--Well:1.0.0",
+            "acl": {
+                "owners": [
+                    "ownergroup@testcompany.com"
+                ],
+                "viewers": [
+                    "viewgroup@testcompany.com"
+                ]
+            },
+            "data": {
+                "ResourceSecurityClassification": "osdu:reference-data--ResourceSecurityClassification:Public:",
+                "Source": "NL_TNO",
+                "SpatialLocation": {
+                    "Wgs84Coordinates": {
+                        "type": "FeatureCollection",
+                        "features": [
+                            {
+                                "type": "Feature",
+                                "geometry": {
+                                    "type": "Point",
+                                    "coordinates": [
+                                        3.51906683,
+                                        55.68101428
+                                    ]
+                                },
+                                "properties": {}
+                            }
+                        ]
+                    }
+                },
+                "FacilityID": "10110909",
+                "FacilityTypeID": "osdu:reference-data--FacilityType:WELL:",
+                "FacilityOperator": [
+                    {
+                        "FacilityOperatorID": "410464",
+                        "FacilityOperatorOrganisationID": "osdu:master-data--Organisation:HESS:"
+                    }
+                ],
+                "FacilityName": "A05-01",
+                "FacilityNameAlias": [
+                    {
+                        "AliasName": "A05-01",
+                        "AliasNameTypeID": "osdu:reference-data--AliasNameType:WELL_NAME:"
+                    }
+                ],
+                "FacilityEvent": [
+                    {
+                        "FacilityEventTypeID": "osdu:reference-data--FacilityEventType:SPUD_DATE:",
+                        "EffectiveDateTime": "1999-06-03T00:00:00"
+                    }
+                ],
+                "VerticalMeasurements": [
+                    {
+                        "VerticalMeasurementID": "Kelly Bushing",
+                        "VerticalMeasurement": 36.6,
+                        "VerticalMeasurementPathID": "osdu:reference-data--VerticalMeasurementPath:DEPTH_DATUM_ELEV:"
+                    }
+                ],
+                "NameAliases": [],
+                "GeoContexts": []
+            },
+            "legal": {
+                "legaltags": [],
+                "otherRelevantDataCountries": []
+            }
+        }
+    ]
+}

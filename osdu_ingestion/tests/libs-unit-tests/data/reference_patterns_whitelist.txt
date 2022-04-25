@@ -1,0 +1,2 @@
+\"(?P<key>CurveUnit)\":\s?\"(?P<value>[\w\d:-]*:GAPI:.*?)\"
+\"(?P<key>CurveUnit)\":\s?\"(?P<value>[\w\d:-]*:V\/V:)\"

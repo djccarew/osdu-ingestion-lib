@@ -1,0 +1,165 @@
+{
+    "results": [
+        {
+            "id": "osdu:reference-data--GeoPoliticalEntityType:Quadrant",
+            "version": 1617035915242494
+        },
+        {
+            "id": "osdu:reference-data--GeoPoliticalEntityType:State%2FProvinceID",
+            "version": 1617035921504578
+        },
+        {
+            "id": "osdu:master-data--GeoPoliticalEntity:Limburg",
+            "version": 1616882476304682
+        },
+        {
+            "id": "osdu:reference-data--GeoPoliticalEntityType:Country",
+            "version": 1619101286753641
+        },
+        {
+            "id": "osdu:reference-data--AliasNameType:UWI",
+            "version": 1616874071876137
+        },
+        {
+            "id": "osdu:reference-data--AliasNameType:WELL_NAME",
+            "version": 1616874071546420
+        },
+        {
+            "id": "osdu:master-data--GeoPoliticalEntity:L",
+            "version": 1616882477414394
+        },
+        {
+            "id": "osdu:master-data--Organisation:ROVD",
+            "version": 1616883365917352
+        },
+        {
+            "id": "osdu:reference-data--FacilityType:WELL_NAME",
+            "version": 1616874912928489
+        },
+        {
+            "id": "osdu:master-data--GeoPoliticalEntity:Netherlands",
+            "version": 1616882478108251
+        },
+        {
+            "id": "osdu:reference-data--OperatingEnvironment:ON",
+            "version": 1616882094734110
+        },
+        {
+            "id": "osdu:master-data--Well:100011",
+            "version": 1614871385736352
+        },
+        {
+            "id": "osdu:master-data--Well:987001",
+            "version": 1614894294956507
+        },
+        {
+            "id": "osdu:master-data--GeoPoliticalEntity:Norway",
+            "version": 1619101290214873
+        },
+        {
+            "id": "osdu:master-data--Wellbore:1029",
+            "version": 1614895938836111
+        },
+        {
+            "id": "osdu:master-data--Wellbore:1009",
+            "version": 1614895938836111
+        },
+        {
+            "id": "osdu:master-data--Wellbore:1029a",
+            "version": 1614896436335662
+        },
+        {
+            "id": "osdu:master-data--Well:14feea1c-582b-4457-9b08-378344d06609",
+            "version": 1617907016637512
+        },
+        {
+            "id": "osdu:master-data--Well:babd9e33-75a4-4f7c-8950-517ef124ce8d",
+            "version": 1617907017196243
+        },
+        {
+            "id": "osdu:master-data--Well:cbf3dd22-4f29-4df9-a4a3-524c1525db97",
+            "version": 1617907017623925
+        },
+        {
+            "id": "osdu:master-data--Well:a42b118e-3265-4fc8-8c09-717e56a676ca",
+            "version": 1617907018049211
+        },
+        {
+            "id": "osdu:master-data--Well:ce2117be-f58b-4214-9468-c7fe58d83b35",
+            "version": 1617907019025514
+        },
+        {
+            "id": "osdu:master-data--Well:f9fa7e36-49ea-4d6f-80d8-6cebf3a9eaa4",
+            "version": 1617907019453686
+        },
+        {
+            "id": "osdu:master-data--Well:23cde448-8bb3-4871-b60f-bfe371daaa6f",
+            "version": 1617907020039802
+        },
+        {
+            "id": "osdu:master-data--Well:c8d3da31-e04a-4810-b9ac-003f4b1e34a5",
+            "version": 1617907020328172
+        },
+        {
+            "id": "osdu:master-data--Well:5b9af54b-c03b-4c3d-8fcd-2e230a70430a",
+            "version": 1617907020608303
+        },
+        {
+            "id": "osdu:master-data--Well:c9143858-f6e9-4865-bf8c-fb93ba15dbfd",
+            "version": 1617907020877432
+        },
+        {
+            "id": "osdu:master-data--Well:ca9961ed-52f4-4568-b1b3-3d8734c714f1",
+            "version": 1617907021158870
+        },
+        {
+            "id": "osdu:master-data--Well:44beabff-08f7-494a-8327-accc68fb2b02",
+            "version": 1617907021510537
+        },
+        {
+            "id": "osdu:master-data--Well:55fa648f-a40a-4908-a3ae-951970971a3d",
+            "version": 1617907021794889
+        },
+        {
+            "id": "osdu:master-data--Well:47d60409-4cf4-4996-acb8-94ed99450e65",
+            "version": 1617907022109942
+        },
+        {
+            "id": "osdu:master-data--Well:a67d9b91-7e04-4e1b-83b8-7f5ed7fd522e",
+            "version": 1617907022434140
+        },
+        {
+            "id": "osdu:master-data--Well:2c2b2796-2285-4a12-b1e2-03782bd0c285",
+            "version": 1617907022731866
+        },
+        {
+            "id": "osdu:master-data--Well:9f1daaea-9470-4f96-8240-4bd581014d2b",
+            "version": 1617907023059624
+        },
+        {
+            "id": "osdu:master-data--Well:78e6b881-e4ee-4b04-8a26-c542be2044bc",
+            "version": 1617907023362215
+        },
+        {
+            "id": "osdu:master-data--Well:51261f6a-7419-47cf-ab8a-95a697e813c5",
+            "version": 1617907023652219
+        },
+        {
+            "id": "osdu:master-data--Well:93c1990d-272a-4ef5-bc09-495808fc6ce1",
+            "version": 1617907023925882
+        },
+        {
+            "id": "osdu:master-data--Well:a414e1c8-176a-4573-9ff6-43b68b0a5129",
+            "version": 1617907024237317
+        },
+        {
+            "id": "osdu:master-data--Well:ac947ef4-8249-4d1a-9020-4e2cf387ffb1",
+            "version": 1617907024519239
+        },
+        {
+            "id": "osdu:master-data--Well:44e9e3dd-ac4e-4843-947e-4cff0f24304e",
+            "version": 1617907024822788
+        }
+    ],
+    "totalCount": 40
+}

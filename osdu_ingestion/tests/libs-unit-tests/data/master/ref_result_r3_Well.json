@@ -1,0 +1,8 @@
+[
+    "osdu:reference-data--ResourceSecurityClassification:Public",
+    "osdu:reference-data--FacilityType:WELL",
+    "osdu:master-data--Organisation:HESS",
+    "osdu:reference-data--AliasNameType:WELL_NAME",
+    "osdu:reference-data--FacilityEventType:SPUD_DATE",
+    "osdu:reference-data--VerticalMeasurementPath:DEPTH_DATUM_ELEV"
+]

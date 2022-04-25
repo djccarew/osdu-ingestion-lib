@@ -1,0 +1,128 @@
+[
+    {
+        "legal": {
+            "legaltags": [
+                "opendes-demo-legaltag"
+            ],
+            "otherRelevantDataCountries": [
+                "srn:opendes:master-data/GeoPoliticalEntity:USA:"
+            ],
+            "status": "srn:opendes:reference-data/LegalStatus:public:1111"
+        },
+        "acl": {
+            "owners": [
+                "data.default.viewers@opendes.osdu-gcp.go3-nrg.projects.epam.com"
+            ],
+            "viewers": [
+                "data.default.owners@opendes.osdu-gcp.go3-nrg.projects.epam.com"
+            ]
+        },
+        "kind": "opendes:osdu:Wellbore:0.3.0",
+        "id": "opendes:master-data/Wellbore:350112350400",
+        "data": {
+            "id": "opendes:master-data/Wellbore:350112350400",
+            "groupType": "master-data",
+            "version": 1,
+            "resourceHostRegionIDs": [
+                "srn:opendes:reference-data/OSDURegion:US-EAST:"
+            ],
+            "resourceObjectCreationDateTime": "2020-10-16T11:14:45-05:00",
+            "resourceVersionCreationDateTime": "2020-10-16T11:14:45-05:00",
+            "resourceSecurityClassification": "srn:opendes:reference-data/ResourceSecurityClassification:public:",
+            "source": "srn:opendes:master-data/Organisation:Oklahoma Corporation Commission:",
+            "existenceKind": "srn:opendes:reference-data/ExistenceKind:Active:",
+            "licenseState": "srn:opendes:reference-data/LicenseState:Unlicensed:",
+            "data": {
+                "FacilityTypeID": "srn:opendes:reference-data/FacilityType:Wellbore:",
+                "FacilityOperator": [
+                    {
+                        "FacilityOperatorOrganisationID": "srn:opendes:master-data/Organisation:CONTINENTAL RESOURCES INC:"
+                    }
+                ],
+                "DataSourceOrganisationID": "srn:opendes:master-data/Organisation:Oklahoma Corporation Commission:",
+                "SpatialLocation": [
+                    {
+                        "Coordinates": [
+                            {
+                                "x": -98.580887,
+                                "y": 35.6381829999999
+                            }
+                        ],
+                        "SpatialGeometryTypeID": "srn:opendes:reference-data/SpatialGeometryType:Point:",
+                        "VerticalCRSID": "srn:opendes:reference-data/VerticalCRS:MSL:",
+                        "HorizontalCRSID": "srn:opendes:reference-data/HorizontalCRS:NAD27:",
+                        "HeightAboveGroundLevelUOMID": "srn:opendes:reference-data/UnitOfMeasure:ft[US]:"
+                    }
+                ],
+                "OperatingEnvironmentID": "srn:opendes:reference-data/OperatingEnvironment:onshore:",
+                "FacilityName": "IRETA 1-4-9XH",
+                "FacilityNameAlias": [
+                    {
+                        "AliasName": " IRETA 1-4-9XH",
+                        "AliasNameTypeID": "srn:opendes:reference-data/AliasNameType:Name:"
+                    },
+                    {
+                        "AliasName": "350112350400",
+                        "AliasNameTypeID": "srn:opendes:reference-data/AliasNameType:UWBI:"
+                    }
+                ],
+                "FacilityEvent": [
+                    {
+                        "FacilityEventTypeID": "srn:opendes:reference-data/FacilityEventType:SPUD:",
+                        "EffectiveDateTime": "2015-03-11T00:00:00-05:00"
+                    },
+                    {
+                        "FacilityEventTypeID": "srn:opendes:reference-data/FacilityEventType:DRILLING FINISH:",
+                        "EffectiveDateTime": "2015-05-18T00:00:00-06:00"
+                    }
+                ],
+                "WellID": "srn:opendes:master-data/Well:3501123504:",
+                "SequenceNumber": 1,
+                "VerticalMeasurements": [
+                    {
+                        "VerticalMeasurementID": "TD_1",
+                        "VerticalMeasurement": 0,
+                        "VerticalMeasurementTypeID": "srn:opendes:reference-data/VerticalMeasurementType:Total Depth:",
+                        "VerticalMeasurementPathID": "srn:opendes:reference-data/VerticalMeasurementPath:Measured Depth:",
+                        "VerticalMeasurementUnitOfMeasureID": "srn:opendes:reference-data/UnitOfMeasure:ft[US]:",
+                        "VerticalReferenceID": "Drill Floor"
+                    },
+                    {
+                        "VerticalMeasurementID": "TD_2",
+                        "VerticalMeasurement": 0,
+                        "VerticalMeasurementTypeID": "srn:opendes:reference-data/VerticalMeasurementType:Total Depth:",
+                        "VerticalMeasurementPathID": "srn:opendes:reference-data/VerticalMeasurementPath:True Vertical Depth:",
+                        "VerticalMeasurementUnitOfMeasureID": "srn:opendes:reference-data/UnitOfMeasure:ft[US]:",
+                        "VerticalReferenceID": "Drill Floor"
+                    },
+                    {
+                        "VerticalMeasurementID": "Elev_1",
+                        "VerticalMeasurement": 1636,
+                        "VerticalMeasurementTypeID": "srn:opendes:reference-data/VerticalMeasurementType:Drill Floor:",
+                        "VerticalMeasurementPathID": "srn:opendes:reference-data/VerticalMeasurementPath:Elevation:",
+                        "VerticalMeasurementUnitOfMeasureID": "srn:opendes:reference-data/UnitOfMeasure:ft[US]:",
+                        "VerticalCRSID": "srn:opendes:reference-data/VerticalCRS:MSL:"
+                    },
+                    {
+                        "VerticalMeasurementID": "Elev_2",
+                        "VerticalMeasurement": 1606,
+                        "VerticalMeasurementTypeID": "srn:opendes:reference-data/VerticalMeasurementType:Ground Level:",
+                        "VerticalMeasurementPathID": "srn:opendes:reference-data/VerticalMeasurementPath:Elevation:",
+                        "VerticalMeasurementUnitOfMeasureID": "srn:opendes:reference-data/UnitOfMeasure:ft[US]:",
+                        "VerticalCRSID": "srn:opendes:reference-data/VerticalCRS:MSL:"
+                    }
+                ],
+                "TrajectoryTypeID": "srn:opendes:reference-data/WellboreTrajectoryType:Horizontal:",
+                "DefaultVerticalMeasurementID": "",
+                "GeographicBottomHoleLocation": {
+                    "Coordinates": [
+                        {
+                            "x": -98.580887,
+                            "y": 35.6381829999999
+                        }
+                    ]
+                }
+            }
+        }
+    }
+]

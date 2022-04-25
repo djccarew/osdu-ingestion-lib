@@ -1,0 +1,73 @@
+{
+    "kind": "osdu:wks:Manifest:1.0.0",
+    "ReferenceData": [],
+    "MasterData": [],
+    "Data": {
+        "WorkProduct": {},
+        "WorkProductComponents": [
+            {
+                "id": "surrogate-key:wpc-1",
+                "kind": "osdu:wks:work-product-component--Document:1.0.0",
+                "acl": {
+                    "owners": [],
+                    "viewers": []
+                },
+                "legal": {
+                    "legaltags": [],
+                    "otherRelevantDataCountries": []
+                },
+                "data": {
+                    "ResourceSecurityClassification": "osdu:reference-data--ResourceSecurityClassification:RESTRICTED:",
+                    "Name": "69_D_CH_11",
+                    "Description": "Document",
+                    "Datasets": [
+                        "surrogate-key:file-1"
+                    ]
+                }
+            },
+            {
+                "id": "surrogate-key:wpc-2",
+                "kind": "osdu:wks:work-product-component--Document:1.0.0",
+                "acl": {
+                    "owners": [],
+                    "viewers": []
+                },
+                "legal": {
+                    "legaltags": [],
+                    "otherRelevantDataCountries": []
+                },
+                "data": {
+                    "ResourceSecurityClassification": "osdu:reference-data--ResourceSecurityClassification:RESTRICTED:",
+                    "Name": "69_D_CH_11",
+                    "Description": "Document",
+                    "Datasets": [
+                        "surrogate-key:file-2"
+                    ]
+                }
+            }
+        ],
+        "Datasets": [
+            {
+                "id": "surrogate-key:file-1",
+                "kind": "osdu:wks:dataset--File.Generic:1.0.0",
+                "acl": {
+                    "owners": [],
+                    "viewers": []
+                },
+                "legal": {
+                    "legaltags": [],
+                    "otherRelevantDataCountries": []
+                },
+                "data": {
+                    "ResourceSecurityClassification": "osdu:reference-data--ResourceSecurityClassification:RESTRICTED:",
+                    "DatasetProperties": {
+                        "FileSourceInfo": {
+                            "FileSource": "",
+                            "PreloadFilePath": "s3://osdu-seismic-test-data/r1/data/provided/USGS_docs/69_D_CH_11.pdf"
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "results": [
+        {
+            "id": "some_test_id",
+            "version": 12345
+        }
+    ],
+    "aggregations": null,
+    "totalCount": 45
+}
